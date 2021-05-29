@@ -2,6 +2,7 @@ use genetic::GeneticCustom;
 use travelling_salesman::*;
 
 use travelling_salesman::city::City;
+use travelling_salesman::tour::fitness::fitness;
 
 fn main() { 
 
@@ -20,7 +21,9 @@ fn main() {
     gene.cycle_vec = vec![6, 2, 3, 4, 1, 5, 7, 8, 9, 10];
 
     println!("{:?}", gene);
-    println!("{:?}", tour::Tour::from_gene(&gene));
+    let x = tour::Tour::from_gene(&gene);
+
+    println!("{:?}", fitness(&x));
 
     let c1 = City {
         x: -7.0,
@@ -35,4 +38,5 @@ fn main() {
         number: 1,
         next: 2,
     };
+
 }

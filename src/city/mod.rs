@@ -45,7 +45,6 @@ impl City {
         return ret;
     }
 
-
     /// Generate a map of n cities.
     pub fn generate_map(n: usize) ->  CityMap {
         todo!();

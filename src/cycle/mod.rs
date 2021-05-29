@@ -1,11 +1,11 @@
 use std::collections::HashMap;
 
-use crate::city::{self, City};
+use crate::city::{City};
 
 pub type CityMap = HashMap<usize, City>;
 
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Cycle {
     pub cycle_vec: Vec<usize>,
     town_map: CityMap
@@ -38,9 +38,16 @@ impl Cycle {
 
     }
 
-    // TODO: Make sure that this returns valid cycles.
-    // TODO: Make sure to update the town next, to the next integer.
-    // TODO: Create a default so that the cycles go back to the start.
+    // pub fn swap(&mut self, other: &mut Self, idx: usize) -> (Self, Self) {
+
+    //     let temp = self.cycle_vec[idx];
+    //     self.cycle_vec[idx] = other.cycle_vec[idx];
+    //     other.cycle_vec[idx] = temp;
+
+
+
+    // }
+
     pub fn to_vec(&self) -> Vec<City> {
         let mut ret = Vec::new();
         
